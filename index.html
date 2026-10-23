@@ -29,7 +29,7 @@ nav a:hover{color:#fff}
 #field{position:absolute;inset:0;width:100%;height:100%}
 .hero-in{position:relative;width:100%;max-width:1040px;margin:0 auto;padding:5rem 1.5rem 3.5rem;pointer-events:none}
 .hero-in a{pointer-events:auto}
-h1{font:600 clamp(3rem,9.5vw,6.6rem)/.95 var(--serif);margin:0 0 1.2rem;letter-spacing:-.03em;color:#fff;animation:rise .9s ease both}
+h1{font:600 clamp(2.5rem,7.2vw,5.4rem)/1 var(--serif);margin:0 0 .8rem;max-width:11ch;letter-spacing:-.03em;color:#fff;animation:rise .9s ease both}
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){h1{animation:none}html{scroll-behavior:auto}}
 .lede{font:italic 400 clamp(1.25rem,2.8vw,1.75rem)/1.4 var(--serif);max-width:32ch;margin:0 0 1rem;color:#d7e8ee}
@@ -85,15 +85,19 @@ h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--ac
 .contact a{color:#7fe0ea}.contact p{margin:.3rem 0}
 footer{max-width:1040px;margin:0 auto;padding:2rem 1.5rem 3rem;color:var(--muted);font-size:.9rem;text-align:center}
 @media(max-width:640px){.tl li{grid-template-columns:1fr;gap:0}.tl .when{text-align:left}.tl li>div:last-child{margin-left:.4rem}.pub{grid-template-columns:1fr;gap:.3rem}}
+.conf{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.conf li{background:var(--surface);padding:1.1rem 1.3rem;border-radius:10px;box-shadow:var(--shadow);border-left:5px solid var(--flame)}
+.conf b{font:600 1.05rem/1.35 var(--serif);display:block;margin-bottom:.25rem}
+.conf span{color:var(--muted);font-size:.92rem}
 </style>
 </head>
 <body>
-<nav aria-label="Sections"><div><b>Nandhakumar P</b><a href="#about">About</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#hobbies">Sketches</a><a href="#contact">Contact</a></div></nav>
+<nav aria-label="Sections"><div><b>Nandhakumar Pandurangan</b><a href="#about">About</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#conferences">Talks</a><a href="#hobbies">Sketches</a><a href="#contact">Contact</a></div></nav>
 <header class="hero">
   <canvas id="field" aria-hidden="true"></canvas>
   <div class="hero-in">
-    <p class="lede" style="margin:0 0 .8rem;font-style:normal;font-size:1rem;color:#7fb7c3">Sakura Science LOTUS Fellow · Best Paper Awardee</p>
-    <h1>Nandhakumar P</h1>
+    <h1>Nandhakumar Pandurangan</h1>
+    <p class="lede" style="margin:0 0 1.4rem;font-style:normal;font-size:1.05rem;color:#7fb7c3">Sakura Science LOTUS Fellow · Best Paper Awardee</p>
     <p class="lede">I study how droplets and particles cluster, evaporate and burn in sprays and dust clouds.</p>
     <p class="hint">Move your pointer over the page: nearby droplets link up into clusters.</p>
     <div class="links">
@@ -103,7 +107,7 @@ footer{max-width:1040px;margin:0 auto;padding:2rem 1.5rem 3rem;color:var(--muted
       <a href="https://www.instagram.com/nandhakumar_08/">Instagram</a>
       <a href="mailto:nandhakumarp@alumni.iitm.ac.in">Email</a>
     </div>
-    <div class="stats"><div><b>7</b>journal articles</div><div><b>5</b>conference presentations</div><div><b>Ph.D.</b>IIT Madras, 2024</div><div><b>2020</b>ILASS-Asia Best Paper</div></div>
+    <div class="stats"><div><b>Ph.D.</b>IIT Madras, 2024</div></div>
   </div>
 </header>
 
@@ -176,6 +180,17 @@ footer{max-width:1040px;margin:0 auto;padding:2rem 1.5rem 3rem;color:var(--muted
     </ol>
   </section>
 
+  <section id="conferences">
+    <h2>Conference presentations</h2>
+    <ul class="conf">
+      <li><b>Particle clustering and its role in aluminum dust cloud explosions</b><span>N. Pandurangan, R. Inoue, A. Ueda, S. Sahu, W. Kim · 41st International Symposium on Combustion, poster presentation, Kyoto, Japan, Jul. 2026</span></li>
+      <li><b>Group evaporation of small and large-scale droplet clusters in a fuel spray-laden homogeneous and isotropic turbulent airflow</b><span>N. Pandurangan, S. Sahu · 40th International Symposium on Combustion, poster presentation, Milan, Italy, Jul. 2024</span></li>
+      <li><b>Spray combustion study of aviation biofuel in an annular air-swirl burner</b><span>M. Balasubramaniyan, N. Pandurangan, S. Sahu · 7th Biennial ASME Gas Turbine India Conference, Bengaluru, India, Dec. 2023</span></li>
+      <li><b>Conditional measurement of droplet size within droplet clusters in polydisperse sprays</b><span>N. Pandurangan, S. Sahu · 11th International Conference on Multiphase Flow (ICMF), Kobe, Japan, Apr. 2023</span></li>
+      <li><b>Characterization of droplet clusters and voids in an evaporating spray</b><span>N. Pandurangan, S. Sahu · 21st Annual Conference on Liquid Atomization and Spray Systems (ILASS) Asia, Zhenjiang, China, Oct. 2020</span></li>
+    </ul>
+  </section>
+
   <section id="more">
     <div class="two">
       <div><h3>Grants and fellowships</h3><ul class="dl">
@@ -223,23 +238,23 @@ footer{max-width:1040px;margin:0 auto;padding:2rem 1.5rem 3rem;color:var(--muted
 
 <script>
 (function(){
-  var c=document.getElementById('field'),x=c.getContext('2d'),W,H,P=[],m={x:-999,y:-999,on:false};
+  var c=document.getElementById('field'),x=c.getContext('2d'),W,H,L=0,P=[],m={x:-999,y:-999,on:false};
   var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function size(){var r=c.getBoundingClientRect(),d=window.devicePixelRatio||1;W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
-    var n=Math.round(Math.min(150,W*H/7000));P=[];for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:1.5+Math.random()*3.5})}
+  function size(){var r=c.getBoundingClientRect(),d=window.devicePixelRatio||1;W=r.width;H=r.height;L=W>760?W*.45:0;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+    var n=Math.round(Math.min(150,W*H/7000));P=[];for(var i=0;i<n;i++)P.push({x:L+Math.random()*(W-L),y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:1.5+Math.random()*3.5})}
   function draw(){
     x.clearRect(0,0,W,H);
     for(var i=0;i<P.length;i++){var p=P[i];
       if(!still){
         if(m.on){var dx=m.x-p.x,dy=m.y-p.y,d=Math.sqrt(dx*dx+dy*dy)+1;if(d<280){p.vx+=dx/d*.05;p.vy+=dy/d*.05}}
         p.vx*=.985;p.vy*=.985;p.x+=p.vx;p.y+=p.vy;
-        if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0}
+        if(p.x<L)p.x=W;if(p.x>W)p.x=L;if(p.y<0)p.y=H;if(p.y>H)p.y=0}
       for(var j=i+1;j<P.length;j++){var q=P[j],ex=p.x-q.x,ey=p.y-q.y,e=ex*ex+ey*ey;
         if(e<5500){x.strokeStyle='rgba(111,214,224,'+(.35*(1-e/5500))+')';x.lineWidth=1;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
       x.fillStyle='rgba(143,226,235,'+(.4+p.r/8)+')';x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill()}
     if(!still)requestAnimationFrame(draw)}
   window.addEventListener('resize',function(){size();if(still)draw()});
-  document.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top;m.on=m.y>-100&&m.y<r.height+100});
+  document.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top;m.on=m.x>L&&m.y>-100&&m.y<r.height+100});
   size();draw();
 })();
 </script>
