@@ -33,7 +33,8 @@ h1{font:600 clamp(2.5rem,7.2vw,5.4rem)/1 var(--serif);margin:0 0 .8rem;max-width
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){h1{animation:none}html{scroll-behavior:auto}}
 .lede{font:italic 400 clamp(1.25rem,2.8vw,1.75rem)/1.4 var(--serif);max-width:32ch;margin:0 0 1rem;color:#d7e8ee}
-.hint{font-size:.85rem;color:#8fb0bc;margin:0 0 1.6rem}
+.hint{position:absolute;z-index:2;right:1.5rem;bottom:1.2rem;margin:0;max-width:24ch;text-align:right;font-size:.9rem;line-height:1.4;color:#b5d3dd;pointer-events:none}
+@media(max-width:760px){.hint{left:1.5rem;max-width:none;bottom:.9rem}.hero-in{padding-bottom:4.2rem}}
 .links{display:flex;flex-wrap:wrap;gap:.6rem}
 .links a{padding:.6rem 1.15rem;border:1px solid rgba(255,255,255,.35);border-radius:999px;color:#fff;text-decoration:none;font-weight:500;background:rgba(255,255,255,.07)}
 .links a:first-child{background:var(--flame);border-color:var(--flame);color:#1a0d07}
@@ -47,7 +48,6 @@ section:last-of-type{padding-bottom:4rem}
 h2{font:600 2.3rem/1.1 var(--serif);margin:0 0 2rem;letter-spacing:-.01em;display:flex;align-items:center;gap:1rem}
 h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
 .about{display:grid;gap:2.5rem}
-@media(min-width:800px){.about{grid-template-columns:3fr 2fr}}
 .about p{margin:0 0 1rem;max-width:62ch}
 .about h2{margin-bottom:1.4rem}
 .honors{list-style:none;margin:0;padding:0;display:grid;gap:.9rem;align-content:start}
@@ -92,13 +92,15 @@ footer{max-width:1040px;margin:0 auto;padding:2rem 1.5rem 3rem;color:var(--muted
   <div class="hero-in">
     <h1>Nandhakumar Pandurangan</h1>
     <p class="lede">I study how droplets and particles cluster, evaporate and burn in sprays and dust clouds.</p>
-    <p class="hint">Move your pointer over the page: nearby droplets link up into clusters.</p>
     <div class="links">
       <a href="#publications">Read my papers</a>
       <a href="https://scholar.google.com/citations?user=6eIyhDsAAAAJ&amp;hl=en">Google Scholar</a>
       <a href="https://www.linkedin.com/in/nandhakumar-pandurangan/">LinkedIn</a>
       <a href="https://www.instagram.com/nandhakumar_08/">Instagram</a>
       <a href="mailto:nandhakumarp@alumni.iitm.ac.in">Email</a>
+    </div>
+  </div>
+  <p class="hint">Move your pointer over the page: nearby droplets link up into clusters.</p>
 </header>
 
 <main>
@@ -109,11 +111,6 @@ footer{max-width:1040px;margin:0 auto;padding:2rem 1.5rem 3rem;color:var(--muted
         <p>I am an experimental fluid mechanics researcher with a focus on spray dynamics and turbulence–particle interactions. I use optical laser diagnostics, including Particle Image Velocimetry (PIV), Interferometric Laser Imaging for Droplet Sizing (ILIDS) and high-speed imaging, to study combustion and multiphase flows.</p>
         <p>I completed my Ph.D. in Mechanical Engineering at IIT Madras, where I was supervised by Dr. Srikrishna Sahu, and I am based in Chennai, India.</p>
       </div>
-      <ul class="honors" aria-label="Honors">
-        <li>Sakura Science LOTUS Fellow</li>
-        <li>Best Paper Awardee</li>
-        <li>University 2nd Rank in Mechanical Engineering</li>
-      </ul>
     </div>
   </section>
 
